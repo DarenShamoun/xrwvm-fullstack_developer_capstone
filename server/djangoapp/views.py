@@ -17,7 +17,6 @@ from .models import CarMake, CarModel
 from .populate import initiate
 from .restapis import get_request, analyze_review_sentiments, post_review
 
-
 # Get an instance of a logger
 logger = logging.getLogger(__name__)
 
@@ -110,7 +109,6 @@ def get_dealer_reviews(request, dealer_id):
         return JsonResponse({"status":200,"reviews":reviews})
     else:
         return JsonResponse({"status":400,"message":"Bad Request"})
-
 
 # Create a `get_dealer_details` view to render the dealer details
 def get_dealer_details(request, dealer_id):
