@@ -1,6 +1,8 @@
-import { Schema as _Schema, model } from 'mongoose';
+/* jshint esversion: 6 */
 
-const Schema = _Schema;
+const mongoose = require('mongoose');
+
+const Schema = mongoose.Schema;
 
 const reviews = new Schema({
 	id: {
@@ -41,4 +43,4 @@ const reviews = new Schema({
   },
 });
 
-export default model('reviews', reviews);
+module.exports = mongoose.model('reviews', reviews);
