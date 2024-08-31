@@ -1,5 +1,5 @@
 from django.db import models
-from django.utils.timezone import now
+# from django.utils.timezone import now
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
@@ -17,7 +17,7 @@ class CarMake(models.Model):
 
 # Car Model model
 class CarModel(models.Model):
-    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE)  # Many-to-One relationship
+    car_make = models.ForeignKey(CarMake, on_delete=models.CASCADE) 
     name = models.CharField(max_length=100)
     CAR_TYPES = [
         ('SEDAN', 'Sedan'),
@@ -36,4 +36,4 @@ class CarModel(models.Model):
     # You can add more fields as necessary
 
     def __str__(self):
-        return f'{self.car_make.name} {self.name}'  # Return the make and model as the string representation
+        return f'{self.car_make.name} {self.name}'
